@@ -1,6 +1,9 @@
 @use "../abstract" as *;
 @use "../base" as *;
 @use "../component" as *;
+@use "../layout" as *;
+
+
 
 .banner{
     &__wrapper{
@@ -30,7 +33,10 @@
 
 .about{
     &__wrapper{
-        @include unevengrid(.5fr 1fr, 7rem)
+        @include unevengrid(1fr);
+        @include mediaQuery{
+            @include unevengrid(.5fr 1fr, 7rem)
+        }
     }
     &__image{
         position: relative;
@@ -56,7 +62,10 @@
 
 .skills{
     &__wrapper{
-        @include grid(1)
+        @include grid(1);
+        @include mediaQuery{
+            @include grid(2);
+        }
     }
     .skillbar{
         width: 100%;
@@ -96,10 +105,15 @@
             @include imgCover(200px,200px)
         }
     }
+    
 }
 .services{
     &__wrapper{
-        @include grid(3);
+        @include grid(1);
+        @include mediaQuery{
+            @include grid(3);
+        }
+        
 
         grid-gap: 4rem;
     }
@@ -110,8 +124,12 @@
 }
 .contact{
     &__wrapper{
-        @include grid(3);
+        @include grid(1);
+        @include mediaQuery{
+            @include grid(3);
+        }
         grid-gap: 4rem;
+        margin-top: 5rem;
 
     }
 }

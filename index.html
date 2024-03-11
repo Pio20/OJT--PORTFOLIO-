@@ -11,9 +11,9 @@
 <body>
     <header class="header py-2">
         <div class="container">
-            <div class="header__wrapper flex justify-between">
+            <div class="header__wrapper flex justify-between items-center">
                 <a href="">A</a>
-                <ul class="flex gap-2">
+                <ul class="flex gap-2" id="menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Skills</a></li>
@@ -21,7 +21,8 @@
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
-                <i>iiii</i>
+                <i class="fa-solid fa-briefcase" id="toggleMenu"></i>
+                <!-- <i class="fa-solid fa-briefcase"></i> -->
             </div>
         </div>
     </header>
@@ -153,7 +154,7 @@
                 <h2 class="text-accent" data-text="Portfolio">Portfolio</h2>
             </div>
 
-            <ul class="flex justify-center gap-6 mb-8 bg-secondary">
+            <ul class="submenu flex justify-center gap-6 mb-8 bg-secondary">
                 <li><a href="#">Logo</a></li>
                 <li><a href="#">Branding</a></li>
                 <li><a href="#">3D Modeling</a></li>
@@ -247,10 +248,22 @@
                 </div>
 
             </div>
+            <br>
             <!-- <div class="button"> -->
                 <a href="#" class="p-1 bg-white text-accent">Contact Me</a>  <!--btn-->
             <!-- </div> -->
         </div>
     </section>
+
+    <script>
+        const toggleMenu = document.querySelector("#toggleMenu");
+        const menu = document.querySelector("#menu");
+        const body = document.querySelector("body");
+
+        toggleMenu.addEventListener('click', ()=> {
+            menu.classList.toggle('open');
+            body.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
