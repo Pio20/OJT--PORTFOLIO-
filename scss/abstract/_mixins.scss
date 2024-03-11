@@ -28,7 +28,7 @@
     justify-content: $justify;
     align-items: $align;
 }
-@mixin unevengrid($val: 1, $gap:1rem){ //for calling grid
+@mixin unevenGrid($val: 1, $gap:1rem){ //for calling grid
     display: grid;
     grid-template-columns: $val;
     grid-gap: $gap;
